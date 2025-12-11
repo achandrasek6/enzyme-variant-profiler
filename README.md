@@ -194,9 +194,10 @@ For each helix or strand, the script locates the CA coordinates of the start and
 d = distance(ca_coords[start_key], ca_coords[end_key])
 ```
 
-[
-d = \sqrt{(x_2 - x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}
-]
+
+$$
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}
+$$
 
 ### Step 4: Output and Interpretation
 
