@@ -6,7 +6,7 @@ The workflow is implemented in three Python scripts:
 
 1. `script1_loops.py` – identify loop regions in 1SAZ and summarize B-factors (flexibility).
 2. `script2_secondary_distances.py` – compute end-to-end distances for helices and strands based on CA coordinates.
-3. `script3_grouped_amino_acids.py` – group sequences by species using a UniProt-style table and a CLUSTAL multiple sequence alignment (MSA), then compute amino-acid usage per alignment position for each species group.
+3. `script3.py` – group sequences by species using a UniProt-style table and a CLUSTAL multiple sequence alignment (MSA), then compute amino-acid usage per alignment position for each species group.
 
 ---
 
@@ -15,7 +15,7 @@ The workflow is implemented in three Python scripts:
 * **PDB structure:** `1SAZ.pdb` (butyrate kinase).
 * **Script 1:** `script1_loops.py`
 * **Script 2:** `script2_secondary_distances.py`
-* **Script 3:** `script3_grouped_amino_acids.py`
+* **Script 3:** `script3.py`
 * **Sequence metadata table (TSV):** `ungrouped_table.tsv`
 
   * Contains at least: `Entry Name` (or `Entry`) and `Organism`.
@@ -43,7 +43,7 @@ python script1_loops.py 1SAZ.pdb > loops.txt
 python script2_secondary_distances.py 1SAZ.pdb > secondary_distances.txt
 
 # Script 3: Species groups + amino-acid usage
-python script3_grouped_amino_acids.py \
+python script3.py \
   --table ungrouped_table.tsv \
   --msa aligned.txt \
   --out_table grouped_table.tsv \
@@ -218,7 +218,7 @@ These distances can be compared among helices and strands. Longer distances can 
 
 ---
 
-## Script 3 – Species Grouping and Amino-Acid Usage (`script3_grouped_amino_acids.py`)
+## Script 3 – Species Grouping and Amino-Acid Usage (`script3.py`)
 
 ### Objective
 
@@ -231,7 +231,7 @@ Script 3 integrates sequence and annotation data to examine how residues vary ac
 ### Command-Line Usage
 
 ```bash
-python script3_grouped_amino_acids.py \
+python script3.py \
   --table ungrouped_table.tsv \
   --msa aligned.txt \
   --out_table grouped_table.tsv \
