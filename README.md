@@ -120,9 +120,10 @@ for loop in loops:
 
   `Average B-factor = (Σᵢ Bᵢ) / N`, where `N` is the number of residues in the loop.
 
-[
+$$
 \text{Average B-factor} = \frac{\sum_i B_i}{N}
-]
+$$
+
 
 * Each residue is labeled (e.g., `LYS45A`) for easy mapping back onto the structure.
 
